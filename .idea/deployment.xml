@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="Ezo">
+  <component name="PublishConfigData" serverName="Ezo" uploadOnCheckin="e123ffa6-465e-4615-8ff4-3bf491d7293e">
     <serverData>
       <paths name="Ezo">
         <serverdata>
@@ -10,5 +10,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="Ezo" />
   </component>
 </project>
