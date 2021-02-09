@@ -1,0 +1,128 @@
+<nav-test></nav-test>
+<!-------------------- END - Main Menu -------------------->
+<div class="content-w">
+    <!-------------------- START - Top Bar -------------------->
+    <div class="top-bar color-scheme-transparent">
+        <!-------------------- START - Top Menu Controls -------------------->
+        <div class="top-menu-controls">
+            <div class="element-search autosuggest-search-activator">
+                <input placeholder="Start typing to search..." type="text">
+            </div>
+
+            <user-logged-in></user-logged-in>
+            <!-------------------- END - User avatar and menu in secondary top menu -------------------->
+        </div>
+        <!-------------------- END - Top Menu Controls -------------------->
+    </div>
+
+    <div class="content-i">
+        <div class="content-box">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="element-box" ng-hide="isUpdating">
+                        <h5 class="form-header">Create Rider</h5>
+                        <div class="alert alert-danger" ng-show="error">{{error}}</div>
+                        <form ng-submit="add()">
+                            <div class="form-group">
+                                <input name="firstname" class="form-control" data-error="" placeholder="First Name" required="required" type="text" ng-model="form.firstName"><br>
+                                <input name="lastname" class="form-control" data-error="" placeholder="Last Name" required="required" type="text" ng-model="form.lastName"><br>
+                                <input name="phone" class="form-control" data-error="" placeholder="Phone" required="required" type="text" ng-model="form.phone"><br>
+                                <input name="email" class="form-control" data-error="" placeholder="Email" required="required" type="text" ng-model="form.email"><br>
+                                <input name="password" class="form-control" data-error="" placeholder="Password" required="required" type="password" ng-model="form.password"><br>
+                                <center><button class="btn btn-sm btn-primary" name="submit">Add Rider</button></center>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="element-box" ng-show="isUpdating">
+                        <h5 class="form-header">Update Rider</h5>
+                        <div class="alert alert-danger" ng-show="error">{{error}}</div>
+                        <form ng-submit="update()">
+                            <div class="form-group">
+                                <input name="firstname" class="form-control" data-error="" placeholder="First Name" required="required" type="text" ng-model="form.firstName"><br>
+                                <input name="lastname" class="form-control" data-error="" placeholder="Last Name" required="required" type="text" ng-model="form.lastName"><br>
+                                <input name="phone" class="form-control" data-error="" placeholder="Phone" required="required" type="text" ng-model="form.phone"><br>
+                                <input name="email" class="form-control" data-error="" placeholder="Email" required="required" type="text" ng-model="form.email"><br>
+                                <center><button class="btn btn-sm btn-primary" name="submit">Update Rider</button></center>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-sm-8">
+                    <div class="element-wrapper">
+                        <div class="element-box">
+                            <div class="table-responsive">
+                                <table class="table table-lightborder">
+                                    <thead>
+                                    <tr>
+                                        <th>Customer Name</th>
+                                        <th class="text-center">Email</th>
+                                        <th class="text-center">Phone</th>
+                                        <th class="text-center">Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <tr ng-repeat = "rider in riders">
+
+                                        <td ng-click="showRider(rider)">
+                                            <div class="user-with-avatar"><a class="text-dark" href="#!riders/{{rider.id}}"><img alt="" src="{{rider.avatar}}"><span class="d-none d-xl-inline-block">{{rider.firstName + " " + rider.lastName}}</span></a></div>
+                                        </td>
+                                        <td ng-click="showRider(rider)" class="text-center">{{rider.email}}</td>
+                                        <td ng-click="showRider(rider)" class="text-center">{{rider.phone}}</td>
+                                        <td class="text-center">
+                                            <span style="cursor: pointer;" data-toggle = "tooltip" title="edit" class=" col picons-thin-icon-thin-0002_write_pencil_new_edit" ng-click="initUpdate(rider)"></span>
+                                            <span style="cursor: pointer;" data-toggle = "tooltip" title="delete" class="col picons-thin-icon-thin-0056_bin_trash_recycle_delete_garbage_empty" ng-click="delete(rider, $index)"></span>
+                                        </td>
+                                        </a>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                                <div class="controls-below-table">
+                                    <div class="table-records-info">Showing records 1 - {{length}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="floated-chat-w">
+                <div class="floated-chat-i">
+                    <div class="chat-close"><i class="os-icon os-icon-close"></i></div>
+                    <div class="chat-head">
+                        <div class="user-w with-status status-green">
+                            <div class="user-avatar-w">
+                                <div class="user-avatar"><img alt="" src="img/avatar1.jpg"></div>
+                            </div>
+                            <div class="user-name">
+                                <h6 class="user-title">John Mayers</h6>
+                                <div class="user-role">Account Manager</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-messages">
+                        <div class="message">
+                            <div class="message-content">Hi, how can I help you?</div>
+                        </div>
+                        <div class="date-break">Mon 10:20am</div>
+                        <div class="message">
+                            <div class="message-content">Hi, my name is Mike, I will be happy to assist you</div>
+                        </div>
+                        <div class="message self">
+                            <div class="message-content">Hi, I tried ordering this product and it keeps showing me error code.</div>
+                        </div>
+                    </div>
+                    <div class="chat-controls">
+                        <input class="message-input" placeholder="Type your message here..." type="text">
+                        <div class="chat-extra"><a href="#"><span class="extra-tooltip">Attach Document</span><i class="os-icon os-icon-documents-07"></i></a><a href="#"><span class="extra-tooltip">Insert Photo</span><i class="os-icon os-icon-others-29"></i></a><a href="#"><span class="extra-tooltip">Upload Video</span><i class="os-icon os-icon-ui-51"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <!--------------------
+END - Chat Popup Box
+-------------------->
+        </div>
+    </div>
+</div>

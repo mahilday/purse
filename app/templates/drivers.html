@@ -1,0 +1,254 @@
+<nav-test></nav-test>
+
+<div class="content-w">
+    <!--------------------
+START - Top Bar
+-------------------->
+    <div class="top-bar color-scheme-transparent">
+        <!--------------------
+START - Top Menu Controls
+-------------------->
+        <div class="top-menu-controls">
+            <div class="element-search autosuggest-search-activator">
+                <input placeholder="Start typing to search..." type="text">
+            </div>
+            <!--------------------
+START - Messages Link in secondary top menu
+-------------------->
+            <!-- <div class="messages-notifications os-dropdown-trigger os-dropdown-position-left"><i class="os-icon os-icon-mail-14"></i>
+                <div class="new-messages-count">12</div>
+                <div class="os-dropdown light message-list">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="user-avatar-w"><img alt="" src="img/avatar1.jpg"></div>
+                                <div class="message-content">
+                                    <h6 class="message-from">John Mayers</h6>
+                                    <h6 class="message-title">Account Update</h6></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="user-avatar-w"><img alt="" src="img/avatar2.jpg"></div>
+                                <div class="message-content">
+                                    <h6 class="message-from">Phil Jones</h6>
+                                    <h6 class="message-title">Secutiry Updates</h6></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="user-avatar-w"><img alt="" src="img/avatar3.jpg"></div>
+                                <div class="message-content">
+                                    <h6 class="message-from">Bekky Simpson</h6>
+                                    <h6 class="message-title">Vacation Rentals</h6></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="user-avatar-w"><img alt="" src="img/avatar4.jpg"></div>
+                                <div class="message-content">
+                                    <h6 class="message-from">Alice Priskon</h6>
+                                    <h6 class="message-title">Payment Confirmation</h6></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        -->
+            <user-logged-in></user-logged-in>
+            <!--------------------
+END - User avatar and menu in secondary top menu
+-------------------->
+        </div>
+        <!--------------------
+END - Top Menu Controls
+-------------------->
+    </div>
+
+    <div class="content-i">
+        <div class="content-box">
+            <div class="row">
+                <div class="col-sm-4" ng-hide="isUpdating">
+                    <div class="element-box">
+                        <h5 class="form-header">Add Driver</h5>
+                        <div class="alert alert-danger" ng-show="error">{{error}}</div>
+                        <form ng-submit="addBasicDetails()" ng-hide="isUploading || isUpdatingVehicleDetails">
+                            <div class="form-group">
+                                <input name="firstname" class="form-control" data-error="" placeholder="First Name" required="required" type="text" ng-model="form.firstName"><br>
+                                <input name="lastname" class="form-control" data-error="" placeholder="Last Name" required="required" type="text" ng-model="form.lastName"><br>
+                                <input name="phone" class="form-control" data-error="" placeholder="Phone" required="required" type="text" ng-model="form.phone"><br>
+                                <input name="email" class="form-control" data-error="" placeholder="Email" required="required" type="text" ng-model="form.email"><br>
+                                <input name="password" class="form-control" data-error="" placeholder="Password" required="required" type="password" ng-model="form.password"><br>
+                                <center><button class="btn btn-sm btn-primary" name="submit" ng-click="addBasicDetails">Add Driver</button></center>
+                            </div>
+                        </form>
+
+                        <form ng-submit="addVehicleDetails()" ng-show="isUpdatingVehicleDetails">
+                            <div class="form-group">
+                                <select name="make" class="form-control" ng-model="form.make" onchange='angular.element(this).scope().getModels(event)' >
+                                    <option ng-repeat="x in make" value="{{x.name}}">{{x.name}}</option>
+                                </select> <br>
+
+                                <select name="model" class="form-control" ng-model="form.model" >
+                                    <option>Select Vehicle Model</option>
+                                    <option ng-repeat="x in vehicleModels" ng-value="{{x}}">{{x.name}}</option>
+                                </select> <br>
+
+
+
+                                <select name="year" class="form-control" ng-model="form.year" >
+                                    <option value="2010">2010</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                </select> <br>
+                                <input name="licenceNo" class="form-control" placeholder="Licence Number" required="required" type="text" ng-model="form.licenceNo"><br>
+                                <input name="issueDate" class="form-control" placeholder="Issue Date" required="required" type="text" ng-model="form.issueDate"><br>
+                                <input name="expDate" class="form-control" placeholder="Expiry Date" required="required" type="text" ng-model="form.expDate"><br>
+                                <input name="color" class="form-control" placeholder="Color" required="required" type="text" ng-model="form.color"><br>
+                                <input name="numberPlate" class="form-control" placeholder="Number Plate" required="required" type="text" ng-model="form.numberPlate"><br>
+                                <center><button class="btn btn-sm btn-primary" name="submit" >Add Details</button></center>
+                            </div>
+                        </form>
+
+                        <form ng-submit="addDocuments()" ng-show="isUploading">
+                            <div class="form-group">
+                                <input name="avatar" class="form-control" type="file" id="avatar" onchange="angular.element(this).scope().handleFileChanged(event)"><br>
+                                <input name="licence" class="form-control" data-error="" type="file" onchange="angular.element(this).scope().handleFileChanged(event)"><br>
+                                <input name="insurance" class="form-control" data-error="" type="file" onchange="angular.element(this).scope().handleFileChanged(event)"><br>
+                                <input name="vehiclePaper" class="form-control" data-error="" type="file" onchange="angular.element(this).scope().handleFileChanged(event)"><br>
+                                <center><button class="btn btn-sm btn-primary" name="submit" type="submit">Upload Documents</button></center>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!--Edit Driver-->
+                <div class="col-sm-4" ng-show="isUpdating">
+                    <div class="element-box" ng-hide="isUploading">
+                        <h5 class="form-header">Edit Driver</h5>
+                        <div class="alert alert-danger" ng-show="error">{{error}}</div>
+                        <form ng-submit="sendUpdateRequest()">
+                            <div class="form-group">
+                                <input name="firstname" class="form-control" placeholder="First Name" required="required" type="text" ng-model="updateForm.firstName"><br>
+                                <input name="lastname" class="form-control" placeholder="Last Name" required="required" type="text" ng-model="updateForm.lastName"><br>
+                                <input name="phone" class="form-control" placeholder="Phone" required="required" type="text" ng-model="updateForm.phone"><br>
+                                <input name="email" class="form-control" placeholder="Email" required="required" type="text" ng-model="updateForm.email"><br>
+                                <!--                                <input name="make" class="form-control" placeholder="Make" required="required" type="text" ng-model="updateForm.make"><br>-->
+                                <!--                                <input name="model" class="form-control" placeholder="Model" required="required" type="text" ng-model="updateForm.model"><br>-->
+
+                                <select name="make" class="form-control" ng-model="updateForm.make" onchange='angular.element(this).scope().getModels(event)' >
+                                    <option ng-repeat="x in make" value="{{x.name}}">{{x.name}}</option>
+                                </select> <br>
+
+                                <select name="model" class="form-control" ng-model="updateForm.model" >
+                                    <option ng-repeat="x in vehicleModels" value="{{x.name}}">{{x.name}}</option>
+                                </select> <br>
+
+                                <select name="year" class="form-control" ng-model="updateForm.year" >
+                                    <option ng-value="2010">2010</option>
+                                    <option ng-value="2011">2011</option>
+                                    <option ng-value="2012">2012</option>
+                                    <option ng-value="2013">2013</option>
+                                    <option ng-value="2014">2014</option>
+                                    <option ng-value="2015">2015</option>
+                                    <option ng-value="2016">2016</option>
+                                    <option ng-value="2017">2017</option>
+                                    <option ng-value="2018">2018</option>
+                                    <option ng-value="2019">2019</option>
+                                    <option ng-value="2020">2020</option>
+                                </select> <br>
+                                <input name="licenceNo" class="form-control" placeholder="Licence Number" required="required" type="text" ng-model="updateForm.licenceNo"><br>
+                                <input name="issueDate" class="form-control" placeholder="Issue Date" required="required" type="text" ng-model="updateForm.issueDate"><br>
+                                <input name="expDate" class="form-control" placeholder="Expiry Date" required="required" type="text" ng-model="updateForm.expDate"><br>
+                                <input name="color" class="form-control" placeholder="Color" required="required" type="text" ng-model="updateForm.color"><br>
+                                <input name="numberPlate" class="form-control" placeholder="Number Plate" required="required" type="text" ng-model="updateForm.numberPlate"><br>
+
+                                <center><button class="btn btn-sm btn-primary" name="submit">Update</button></center>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- End Edit Driver-->
+
+
+                <div class="col-sm-8">
+                    <div class="element-wrapper">
+                        <div class="element-box">
+                            <div class="table-responsive">
+                                <table class="table table-lightborder">
+                                    <thead>
+                                    <tr>
+                                        <th>Customer Name</th>
+                                        <th class="text-center">Email</th>
+                                        <th class="text-center">Phone</th>
+                                        <th class="text-center">Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat ="x in drivers">
+                                        <td ng-click="showDriver(x)">
+                                            <div class="user-with-avatar"><a class = "text-dark" href="#!drivers/{{x.id}}"><img alt="" src="{{x.avatar}}"><span class="d-none d-xl-inline-block">{{x.firstName + " " + x.lastName}}</span></a></div>
+                                        </td>
+                                        <td class="text-center" ng-click="showDriver(x)">{{x.email}}</td>
+                                        <td class="text-center" ng-click="showDriver(x)">{{x.phone}}</td>
+                                        <td class="text-center">
+                                            <span  ng-click="initUpdate(x)" style="cursor: pointer;"  title="edit" class=" col picons-thin-icon-thin-0002_write_pencil_new_edit"></span>
+                                            <span ng-click="delete(x)" style="cursor: pointer;" data-toggle="tooltip" title="delete" class="col picons-thin-icon-thin-0056_bin_trash_recycle_delete_garbage_empty"></span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="floated-chat-w">
+                <div class="floated-chat-i">
+                    <div class="chat-close"><i class="os-icon os-icon-close"></i></div>
+                    <div class="chat-head">
+                        <div class="user-w with-status status-green">
+                            <div class="user-avatar-w">
+                                <div class="user-avatar"><img alt="" src="img/avatar1.jpg"></div>
+                            </div>
+                            <div class="user-name">
+                                <h6 class="user-title">John Mayers</h6>
+                                <div class="user-role">Account Manager</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-messages">
+                        <div class="message">
+                            <div class="message-content">Hi, how can I help you?</div>
+                        </div>
+                        <div class="date-break">Mon 10:20am</div>
+                        <div class="message">
+                            <div class="message-content">Hi, my name is Mike, I will be happy to assist you</div>
+                        </div>
+                        <div class="message self">
+                            <div class="message-content">Hi, I tried ordering this product and it keeps showing me error code.</div>
+                        </div>
+                    </div>
+                    <div class="chat-controls">
+                        <input class="message-input" placeholder="Type your message here..." type="text">
+                        <div class="chat-extra"><a href="#"><span class="extra-tooltip">Attach Document</span><i class="os-icon os-icon-documents-07"></i></a><a href="#"><span class="extra-tooltip">Insert Photo</span><i class="os-icon os-icon-others-29"></i></a><a href="#"><span class="extra-tooltip">Upload Video</span><i class="os-icon os-icon-ui-51"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <!--------------------
+END - Chat Popup Box
+-------------------->
+        </div>
+    </div>
+</div>
+</div>
+<div class="display-type"></div>

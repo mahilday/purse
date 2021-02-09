@@ -1,0 +1,159 @@
+<nav-test></nav-test>
+<!--------------------
+END - Main Menu
+-------------------->
+<div class="content-w">
+    <!--------------------
+START - Top Bar
+-------------------->
+    <div class="top-bar color-scheme-transparent">
+        <!--------------------
+START - Top Menu Controls
+-------------------->
+        <div class="top-menu-controls">
+            <div class="element-search autosuggest-search-activator">
+                <input placeholder="Start typing to search..." type="text">
+            </div>
+            <user-logged-in></user-logged-in>
+            <!-- END - User avatar and menu in secondary top menu -->
+        </div>
+        <!-- END - Top Menu Controls -->
+    </div>
+
+    <div class="content-i">
+        <div class="content-box">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="element-content">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <a class="element-box el-tablo" href="#">
+                                    <div class="label">Revenue</div>
+                                    <div class="value">&#8358;{{driver.walletBalance}}</div>
+                                    <div class="trending trending-up-basic"><span></span><i class="os-icon os-icon-arrow-up2"></i></div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4">
+                                <a class="element-box el-tablo" ng-controller= "DriverTripsController" href="#">
+                                    <div class="label">Trips Done</div>
+                                    <div class="value">{{length}}</div>
+                                    <div class="trending trending-up-basic"><span></span><i class="os-icon os-icon-arrow-up2"></i></div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="profile-tile">
+                                    <a class="profile-tile-box" href="#">
+                                        <div class="pt-avatar-w"><img alt="" src="{{driver.avatar}}" height=""></div>
+                                        <div class="pt-user-name">{{driver.firstName + " " + driver.lastName}}</div>
+                                    </a>
+                                    <div class="profile-tile-meta">
+                                        <ul>
+                                            <li>Vehicle Make:<strong>{{driver.vehicleDetails.make}}</strong></li>
+                                            <li>model:<strong>{{driver.vehicleDetails.model}}</strong></li>
+                                            <li>color:<strong>{{driver.vehicleDetails.color}}</strong></li>
+                                            <li>Phone:<strong>{{driver.phone}}</strong></li>
+                                        </ul>
+                                        <!-- <div class="pt-btn"><a class="btn btn-success btn-sm" href="apps_full_chat.html">Send Message</a></div> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="element-wrapper">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="element-box">
+                                    <div class="table-responsive">
+                                        <table class="table table-lightborder">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center">id</th>
+                                                <th class="text-center">Driver Id</th>
+                                                <th class="text-center">Pickup address</th>
+                                                <th class="text-center">Drop address</th>
+                                                <th class="text-center">Status</th>
+                                                <!-- <th class="text-center">Payment Status</th> -->
+                                            </tr>
+                                            </thead>
+                                            <tbody ng-controller = "DriverTripsController">
+                                            <tr ng-repeat = "x in drivertrips">
+                                                <td>
+                                                    <!-- <div class="user-with-avatar"><img alt="" src="img/avatar1.jpg"><span class="d-none d-xl-inline-block smaller lighter">John Mayers</span></div> -->
+                                                    {{x.id}}
+                                                </td>
+                                                <td class="text-center"><span class="smaller lighter">{{x.driverId}}</span></td>
+                                                <td class="text-center"><span class="smaller lighter">{{x.pickUp}}</span></td>
+                                                <td class="text-center"><span class="smaller lighter">{{x.dropOff}}</span></td>
+                                                <td class="text-center"><span class="smaller lighter text-white py-1 px-2 rounded {{changeBg(x.status)}}">{{x.status}}</span></td>
+                                                <!-- <td class="text-center"><button class="mr-2 mb-2 btn btn-primary btn-sm" type="button"></button></td> -->
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="controls-below-table" ng-controller= "DriverTripsController">
+                                            <div class="table-records-info">Showing records 1 - {{length}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6" ng-controller= "DriverController">
+                                <div class="element-box">
+                                    <h5 class="form-header">Driver Details</h5>
+                                    <button class="btn btn-sm btn-primary" name="submit" ng-click="approve()" ng-hide="driver.isApproved">Approve Driver</button>
+                                    <button class="btn btn-sm btn-danger" name="submit" ng-click="delete()">Delete Driver</button>
+                                    <hr/>
+
+                                    <h6>Driver's License</h6><br/>
+                                    <img src="{{driver.vehicleDetails.licenceDetails.licenceUrl}}" class="img-responsive"><br/><br/>
+                                    <h6>Vehicle Insurance</h6><br/>
+                                    <img src="{{driver.vehicleDetails.insuranceUrl}}" class="img-responsive"><br/><br/>
+                                    <h6>Vehicle Papers</h6><br/>
+                                    <img src="{{driver.vehicleDetails.vehiclePaperUrl}}" class="img-responsive"><br/><br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="floated-chat-w">
+                <div class="floated-chat-i">
+                    <div class="chat-close"><i class="os-icon os-icon-close"></i></div>
+                    <div class="chat-head">
+                        <div class="user-w with-status status-green">
+                            <div class="user-avatar-w">
+                                <div class="user-avatar"><img alt="" src="img/avatar1.jpg"></div>
+                            </div>
+                            <div class="user-name">
+                                <h6 class="user-title">John Mayers</h6>
+                                <div class="user-role">Account Manager</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-messages">
+                        <div class="message">
+                            <div class="message-content">Hi, how can I help you?</div>
+                        </div>
+                        <div class="date-break">Mon 10:20am</div>
+                        <div class="message">
+                            <div class="message-content">Hi, my name is Mike, I will be happy to assist you</div>
+                        </div>
+                        <div class="message self">
+                            <div class="message-content">Hi, I tried ordering this product and it keeps showing me error code.</div>
+                        </div>
+                    </div>
+                    <div class="chat-controls">
+                        <input class="message-input" placeholder="Type your message here..." type="text">
+                        <div class="chat-extra"><a href="#"><span class="extra-tooltip">Attach Document</span><i class="os-icon os-icon-documents-07"></i></a><a href="#"><span class="extra-tooltip">Insert Photo</span><i class="os-icon os-icon-others-29"></i></a><a href="#"><span class="extra-tooltip">Upload Video</span><i class="os-icon os-icon-ui-51"></i></a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+<div class="display-type"></div>
+</div>
+    
