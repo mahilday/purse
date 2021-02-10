@@ -20,44 +20,12 @@ app.config(function ($stateProvider, $urlRouterProvider, $httpProvider){
         templateUrl: "templates/login.html",
       },
       {
-        name: "trips",
-        url: "/trips",
-        authenticate: true,
-        templateUrl: "trips.html",
-        controller: "TripsController"
+        name: "register",
+        url: "/register",
+        controller: "AuthController",
+        templateUrl: "templates/register.html",
       },
-      {
-        name: "drivers",
-        url: "/drivers",
-        controller: "DriversController",
-        templateUrl: "templates/drivers.html",
-        authenticate: true,
-      },
-      {
-        name: "account",
-        url: "/account",
-        templateUrl: "templates/account.html",
-        authenticate: true,
-      },
-      {
-        name: "business",
-        url: "/business",
-        templateUrl: "templates/business.html",
-        authenticate: true,
-      },
-      {
-        name: "driver",
-        url: "/drivers/:id",
-        controller: "DriverController",
-        templateUrl: "templates/driver.html",
-        authenticate: true,
-      },
-      {
-        name: "map",
-        url: "/admin/admin/map",
-        templateUrl: "templates/map.html",
-        authenticate: true,
-      },
+
       {
         name: "rider",
         url: "/admin/riders/:id",
