@@ -2,6 +2,20 @@
 app.config(function ($stateProvider, $urlRouterProvider, $httpProvider){
     var states = [
       {
+        name: "login",
+        url: "/login",
+        controller: "AuthController",
+        templateUrl: "templates/login.html",
+      },
+
+      {
+        name: "register",
+        url: "/register",
+        controller: "AuthController",
+        templateUrl: "templates/register.html",
+      },
+
+      {
         name: "main",
         url: "/",
         templateUrl: "templates/dashboard.html",
@@ -13,23 +27,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $httpProvider){
         templateUrl: "templates/dashboard.html",
         authenticate: true,
       },
-      {
-        name: "login",
-        url: "/login",
-        controller: "AuthController",
-        templateUrl: "templates/login.html",
-      },
-      {
-        name: "register",
-        url: "/register",
-        controller: "AuthController",
-        templateUrl: "templates/register.html",
-      },
 
       {
         name: "wallet",
         url: "/wallet",
-        templateUrl: "templates/wallet.html",
+        templateUrl: "templates/add-bank.html",
         controller: "WalletController",
         authenticate: true,
       },
