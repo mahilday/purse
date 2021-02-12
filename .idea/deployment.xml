@@ -2,6 +2,13 @@
 <project version="4">
   <component name="PublishConfigData" serverName="Ezo" uploadOnCheckin="e123ffa6-465e-4615-8ff4-3bf491d7293e">
     <serverData>
+      <paths name="EZO CPANEL">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="Ezo">
         <serverdata>
           <mappings>
