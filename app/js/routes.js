@@ -1,5 +1,9 @@
 // app.js
-app.config(function ($stateProvider, $urlRouterProvider, $httpProvider){
+app.config(function ($stateProvider,
+                     $urlRouterProvider,
+                     $locationProvider,
+                     $httpProvider){
+  // $locationProvider.html5Mode(true);
     var states = [
       {
         name: "login",
@@ -31,7 +35,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $httpProvider){
       {
         name: "wallet",
         url: "/wallet",
-        templateUrl: "templates/add-bank.html",
+        templateUrl: "templates/wallet.html",
         controller: "WalletController",
         authenticate: true,
       },
@@ -76,9 +80,9 @@ app.config(function ($stateProvider, $urlRouterProvider, $httpProvider){
 
       {
         name: "add-bank",
-        url: "/bank",
+        url: "/add-bank",
         templateUrl: "templates/add-bank.html",
-        controller: "drivers/BanksController",
+        controller: "BanksController",
         authenticate: true,
       },
 
