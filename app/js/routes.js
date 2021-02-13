@@ -52,6 +52,13 @@ app.config(function ($stateProvider,
         templateUrl: "templates/settings.html",
         authenticate: true,
       },
+
+      {
+        name: "transact",
+        url: "/transact",
+        templateUrl: "templates/transact.html",
+        authenticate: true,
+      },
       {
         name: "add",
         url: "/add",

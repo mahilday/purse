@@ -1,4 +1,4 @@
-<div class="header dashboard">
+<div class="header dashboard" ng-controller="NavController">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-12">
@@ -10,18 +10,18 @@
                             <div class="account_money">
                                 <ul>
                                     <li class="crypto">
-                                        <span>0.0025</span>
+                                        <span>{{currentUser.user.btc_wallet_amount}}</span>
                                         <i class="cc BTC"></i>
                                     </li>
                                     <li class="usd">
-                                        <span>19.93 USD</span>
+                                        <span>{{currentUser.user.btc_wallet_amount}} USD</span>
                                     </li>
                                 </ul>
                             </div>
                             <div class="profile_log dropdown">
                                 <div class="user" data-toggle="dropdown">
                                     <span class="thumb"><i class="la la-user"></i></span>
-                                    <span class="name">Maria Pascle</span>
+                                    <span class="name">{{currentUser.user.firstName + " " + currentUser.user.lastName}}</span>
                                     <span class="arrow"><i class="la la-angle-down"></i></span>
                                 </div>
                                 <div class="dropdown-menu dropdown-menu-right">

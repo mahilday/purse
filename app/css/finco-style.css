@@ -23,6 +23,40 @@
   margin-top: 5%;
 }
 
+.widget-card .widget-stat{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.widget-card .widget-stat i{
+  font-size: 42px;
+  margin: 10px 0px 5px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*Progress Indicator*/
