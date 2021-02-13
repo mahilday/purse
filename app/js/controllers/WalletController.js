@@ -6,6 +6,7 @@ app.controller("WalletController", function (
     $localStorage
 ) {
 
+    $scope.currentUser = $localStorage.user;
   // $http({
   //   method: "PATCH",
   //   url: config.apiUrl + "/upload_avatar",

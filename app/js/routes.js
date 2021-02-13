@@ -61,13 +61,13 @@ app.config(function ($stateProvider,
       {
         name: "addFunds",
         url: "/add-funds",
-        templateUrl: "add-funds.html",
+        templateUrl: "templates/add-funds.html",
         authenticate: true,
       },
       {
         name: "exchange",
         url: "/exchange",
-        templateUrl: "exchange.html",
+        templateUrl: "templates/exchange.html",
         authenticate: true,
       },
       {

@@ -1,55 +1,6 @@
 
-<div class="header dashboard">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-12">
-                <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=""></a>
 
-                    <div class="dashboard_log my-2">
-                        <div class="d-flex align-items-center">
-                            <div class="account_money">
-                                <ul>
-                                    <li class="crypto">
-                                        <span>0.0025</span>
-                                        <i class="cc BTC"></i>
-                                    </li>
-                                    <li class="usd">
-                                        <span>19.93 USD</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="profile_log dropdown">
-                                <div class="user" data-toggle="dropdown">
-                                    <span class="thumb"><i class="la la-user"></i></span>
-                                    <span class="name">Maria Pascle</span>
-                                    <span class="arrow"><i class="la la-angle-down"></i></span>
-                                </div>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="accounts.html" class="dropdown-item">
-                                        <i class="la la-user"></i> Account
-                                    </a>
-                                    <a href="history.html" class="dropdown-item">
-                                        <i class="la la-book"></i> History
-                                    </a>
-                                    <a href="settings.html" class="dropdown-item">
-                                        <i class="la la-cog"></i> Setting
-                                    </a>
-                                    <a href="lock.html" class="dropdown-item">
-                                        <i class="la la-lock"></i> Lock
-                                    </a>
-                                    <a href="signin.html" class="dropdown-item logout">
-                                        <i class="la la-sign-out"></i> Logout
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-</div>
+<div ng-include src="'templates/includes/header.html'"></div>
 
 <div ng-include src="'templates/includes/side-nav.html'"></div>
 
@@ -77,48 +28,54 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
+
                             <div class="col-xl-4 col-lg-6 col-xxl-6">
                                 <div class="widget-card">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="widget-stat">
                                             <div class="coin-title">
-                                                <span><i class="cc BTC"></i></span>
-                                                <h5 class="d-inline-block ml-2 mb-3">Bitcoin <span>(24h)</span>
-                                                </h5>
+                                                <span><i class="fas fa-money-check-alt"></i></span>
+                                                <h5 class="d-inline-block ml-2 mb-3">Naira Wallet </h5>
                                             </div>
-                                            <h4>USD 1254.36 <span class="badge badge-success ml-2">+ 06%</span>
-                                            </h4>
-                                        </div>
-                                        <div id="btcChart"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-xxl-6">
-                                <div class="widget-card">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="widget-stat">
-                                            <div class="coin-title">
-                                                <span><i class="cc ETH"></i></span>
-                                                <h5 class="d-inline-block ml-2 mb-3">Ethereum <span>(24h)</span>
-                                                </h5>
-                                            </div>
-                                            <h4>USD 1254.36 <span class="badge badge-danger ml-2">- 06%</span>
+                                            <h4>NGN {{currentUser.user.btc_wallet_amount}}
+<!--                                                <span class="badge badge-danger ml-2">- 06%</span>-->
                                             </h4>
                                         </div>
                                         <div id="ltcChart"></div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-xl-4 col-lg-6 col-xxl-6">
                                 <div class="widget-card">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="widget-stat">
                                             <div class="coin-title">
-                                                <span><i class="cc LTC"></i></span>
-                                                <h5 class="d-inline-block ml-2 mb-3">Litecoin <span>(24h)</span>
+                                                <span><i class="cc BTC"></i></span>
+                                                <h5 class="d-inline-block ml-2 mb-3">
+                                                    Bitcoin
                                                 </h5>
                                             </div>
-                                            <h4>USD 1254.36 <span class="badge badge-primary ml-2"> 06%</span>
+                                            <h4>USD {{currentUser.user.btc_wallet_amount}}
+<!--                                                <span class="badge badge-success ml-2">+ 06%</span>-->
+                                            </h4>
+                                        </div>
+                                        <div id="btcChart"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-xl-4 col-lg-6 col-xxl-6">
+                                <div class="widget-card">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="widget-stat">
+                                            <div class="coin-title">
+                                                <span><i class="cc START-alt"></i></span>
+                                                <h5 class="d-inline-block ml-2 mb-3">Total Balance</h5>
+                                            </div>
+                                            <h4>USD {{currentUser.user.btc_wallet_amount}}
+<!--                                                <span class="badge badge-primary ml-2"> </span>-->
                                             </h4>
                                         </div>
                                         <div id="xrpChart"></div>
@@ -135,7 +92,7 @@
                 <div class="card">
                     <div class="card-header border-0 py-0">
                         <h4 class="card-title">Recent Activities</h4>
-                        <a href="#">View More </a>
+                        <a href="#!/history">View More </a>
                     </div>
                     <div class="card-body">
                         <div class="transaction-table">
