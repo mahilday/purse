@@ -1,7 +1,4 @@
 
-#main-wrapper{
-  margin-top: 10px;
-}
 
 .mini-logo img{
   width: 150px;
@@ -21,6 +18,7 @@
 /*Dashboard Page*/
 .content-body{
   margin-top: 5%;
+  height: max-content;
 }
 
 
