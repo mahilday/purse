@@ -11,6 +11,10 @@ app.config(function ($httpProvider) {
   $httpProvider.interceptors.push("testInterceptor");
 });
 
+app.controller("NavController", function($scope, $http, $state, config, AuthService, $localStorage) {
+    alert();
+});
+
 function testInterceptor($q, $rootScope) {
   return {
     request: function (config) {

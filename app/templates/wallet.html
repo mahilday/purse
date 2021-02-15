@@ -1,0 +1,210 @@
+
+
+<div ng-include src="'templates/includes/header.html'"></div>
+
+<div ng-include src="'templates/includes/side-nav.html'"></div>
+
+<div class="page-title dashboard">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page-title-content">
+                    <p>Welcome Back,
+                        <span> Maria Pascle</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-xxl-12">
+                <div class="card">
+                    <div class="card-header border-0 py-0">
+                        <h4 class="card-title">Wallet</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+
+                            <div class="col-xl-4 col-lg-6 col-xxl-6">
+                                <div class="widget-card">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="widget-stat">
+                                            <div class="coin-title">
+                                                <span><i class="fas fa-money-check-alt"></i></span>
+                                                <h5 class="d-inline-block ml-2 mb-3">Naira Wallet </h5>
+                                            </div>
+                                            <h4>NGN {{currentUser.user.btc_wallet_amount}}
+<!--                                                <span class="badge badge-danger ml-2">- 06%</span>-->
+                                            </h4>
+                                        </div>
+                                        <div id="ltcChart"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-lg-6 col-xxl-6">
+                                <div class="widget-card">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="widget-stat">
+                                            <div class="coin-title">
+                                                <span><i class="cc BTC"></i></span>
+                                                <h5 class="d-inline-block ml-2 mb-3">
+                                                    Bitcoin
+                                                </h5>
+                                            </div>
+                                            <h4>USD {{currentUser.user.btc_wallet_amount}}
+<!--                                                <span class="badge badge-success ml-2">+ 06%</span>-->
+                                            </h4>
+                                        </div>
+                                        <div id="btcChart"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-xl-4 col-lg-6 col-xxl-6">
+                                <div class="widget-card">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="widget-stat">
+                                            <div class="coin-title">
+                                                <span><i class="cc START-alt"></i></span>
+                                                <h5 class="d-inline-block ml-2 mb-3">Total Balance</h5>
+                                            </div>
+                                            <h4>USD {{currentUser.user.btc_wallet_amount}}
+<!--                                                <span class="badge badge-primary ml-2"> </span>-->
+                                            </h4>
+                                        </div>
+                                        <div id="xrpChart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-xxl-8">
+                <div class="card">
+                    <div class="card-header border-0 py-0">
+                        <h4 class="card-title">Recent Activities</h4>
+                        <a href="#!/history">View More </a>
+                    </div>
+                    <div class="card-body">
+                        <div class="transaction-table">
+                            <div class="table-responsive">
+                                <table class="table mb-0 table-responsive-sm">
+                                    <tbody>
+                                    <tr>
+                                        <td><span class="sold-thumb"><i class="la la-arrow-down"></i></span>
+                                        </td>
+
+                                        <td>
+                                            <span class="badge badge-danger">Sold</span>
+                                        </td>
+                                        <td>
+                                            <i class="cc BTC"></i> Bitcoin
+                                        </td>
+                                        <td>
+                                            Using - Bank *******5264
+                                        </td>
+                                        <td class="text-danger">-0.000242 BTC</td>
+                                        <td>-0.125 USD</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="buy-thumb"><i class="la la-arrow-up"></i></span>
+                                        </td>
+                                        <td>
+                                            <span class="badge badge-success">Buy</span>
+                                        </td>
+                                        <td>
+                                            <i class="cc LTC"></i> Litecoin
+                                        </td>
+                                        <td>
+                                            Using - Card *******8475
+                                        </td>
+                                        <td class="text-success">-0.000242 BTC</td>
+                                        <td>-0.125 USD</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="sold-thumb"><i class="la la-arrow-down"></i></span>
+                                        </td>
+                                        <td>
+                                            <span class="badge badge-danger">Sold</span>
+                                        </td>
+                                        <td>
+                                            <i class="cc XRP"></i> Ripple
+                                        </td>
+                                        <td>
+                                            Using - Card *******8475
+                                        </td>
+                                        <td class="text-danger">-0.000242 BTC</td>
+                                        <td>-0.125 USD</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="buy-thumb"><i class="la la-arrow-up"></i></span>
+                                        </td>
+                                        <td>
+                                            <span class="badge badge-success">Buy</span>
+                                        </td>
+                                        <td>
+                                            <i class="cc DASH"></i> Dash
+                                        </td>
+                                        <td>
+                                            Using - Card *******2321
+                                        </td>
+                                        <td class="text-success">-0.000242 BTC</td>
+                                        <td>-0.125 USD</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="sold-thumb"><i class="la la-arrow-down"></i></span>
+                                        </td>
+                                        <td>
+                                            <span class="badge badge-danger">Sold</span>
+                                        </td>
+                                        <td>
+                                            <i class="cc BTC"></i> Bitcoin
+                                        </td>
+                                        <td>
+                                            Using - Card *******2321
+                                        </td>
+                                        <td class="text-danger">-0.000242 BTC</td>
+                                        <td>-0.125 USD</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer dashboard">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="copyright">
+                    <p>© Copyright 2019 <a href="#">Tradix</a> I All Rights Reserved</p>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="footer-social">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

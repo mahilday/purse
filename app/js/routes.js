@@ -1,93 +1,113 @@
 // app.js
-app.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
-  var states = [
-    {
-      name: "main",
-      url: "/",
-      controller: "AuthController",
-      templateUrl: "templates/dashboard.html",
-      authenticate: true,
-    },
-    {
-      name: "dashboard",
-      url: "/dashboard",
-      controller: "AuthController",
-      templateUrl: "templates/dashboard.html",
-      authenticate: true,
-    },
-    {
-      name: "login",
-      url: "/login",
-      controller: "AuthController",
-      templateUrl: "templates/login.html",
-    },
-    {
-      name: "register",
-      url: "/register",
-      controller: "AuthController",
-      templateUrl: "templates/register.html",
-    },
+app.config(function ($stateProvider,
+                     $urlRouterProvider,
+                     $locationProvider,
+                     $httpProvider){
+  // $locationProvider.html5Mode(true);
+    var states = [
+      {
+        name: "login",
+        url: "/login",
+        controller: "AuthController",
+        templateUrl: "templates/login.html",
+      },
 
-    {
-      name: "rider",
-      url: "/admin/riders/:id",
-      templateUrl: "templates/account.html",
-      controller: "RiderController",
-      authenticate: true,
-    },
-    {
-      name: "riders",
-      url: "/riders",
-      templateUrl: "templates/users.html",
-      controller: "RidersController",
-      authenticate: true,
-    },
-    {
-      name: "profile",
-      url: "/profile",
-      templateUrl: "templates/profile.html",
-      authenticate: true,
-    },
-    {
-      name: "trips2",
-      url: "/trips2",
-      templateUrl: "trips2.html",
-      authenticate: true,
-    },
-    {
-      name: "profile2",
-      url: "/profile2",
-      templateUrl: "profile2.html",
-      authenticate: true,
-    },
-    {
-      name: "users2",
-      url: "/users2",
-      templateUrl: "users2.html",
-      authenticate: true,
-    },
-    {
-      name: "admins",
-      url: "/admins",
-      templateUrl: "templates/admins.html",
-      controller: "AdminsController",
-      authenticate: true,
-    },
+      {
+        name: "register",
+        url: "/register",
+        controller: "AuthController",
+        templateUrl: "templates/register.html",
+      },
 
-    // Drivers Routes
-    {
-      name: "d-login",
-      url: "/driver/login",
-      controller: "drivers/AuthController",
-      templateUrl: "templates/drivers/login.html",
-    },
-    {
-      name: "d-upload",
-      url: "/driver/upload",
-      controller: "drivers/AuthController",
-      templateUrl: "templates/login.html",
-    },
-  ];
-  states.forEach((state) => $stateProvider.state(state));
-  $urlRouterProvider.otherwise("/");
+      {
+        name: "main",
+        url: "/",
+        templateUrl: "templates/dashboard.html",
+        authenticate: true,
+      },
+      {
+        name: "dashboard",
+        url: "/dashboard",
+        templateUrl: "templates/dashboard.html",
+        controller: "AuthController",
+        authenticate: true,
+      },
+
+      {
+        name: "wallet",
+        url: "/wallet",
+        templateUrl: "templates/wallet.html",
+        controller: "WalletController",
+        authenticate: true,
+      },
+      {
+        name: "history",
+        url: "/history",
+        templateUrl: "templates/history.html",
+        controller: "HistoryController",
+        authenticate: true,
+      },
+      {
+        name: "settings",
+        url: "/settings",
+        templateUrl: "templates/settings.html",
+        authenticate: true,
+      },
+
+      {
+        name: "transact",
+        url: "/transact",
+        templateUrl: "templates/transact.html",
+        authenticate: true,
+      },
+      {
+        name: "add",
+        url: "/add",
+        templateUrl: "add.html",
+        authenticate: true,
+      },
+      {
+        name: "addFunds",
+        url: "/add-funds",
+        templateUrl: "templates/add-funds.html",
+        authenticate: true,
+      },
+      {
+        name: "exchange",
+        url: "/exchange",
+        templateUrl: "templates/exchange.html",
+        authenticate: true,
+      },
+      {
+        name: "banks",
+        url: "/banks",
+        templateUrl: "templates/banks.html",
+        controller: "BanksController",
+        authenticate: true,
+      },
+
+      {
+        name: "add-bank",
+        url: "/add-bank",
+        templateUrl: "templates/add-bank.html",
+        controller: "BanksController",
+        authenticate: true,
+      },
+
+      {
+        name: "profile",
+        url: "/profile",
+        controller: "ProfileController",
+        templateUrl: "templates/profile.html",
+      },
+
+      {
+        name: "editProfile",
+        url: "/edit-profile",
+        controller: "ProfileController",
+        templateUrl: "templates/edit-profile.html",
+      }
+    ];
+    states.forEach((state) => $stateProvider.state(state));
+    $urlRouterProvider.otherwise('/');
 });

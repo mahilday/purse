@@ -5,7 +5,6 @@ app.controller(
     $scope.error;
 
     $scope.login = function () {
-      console.log($localStorage);
       $http({
         method: "POST",
         url: config.apiUrl + "/auth/login",
@@ -26,16 +25,40 @@ app.controller(
         }
       );
     };
+
+    $scope.register = function () {
+      $http({
+        method: "POST",
+        url: config.apiUrl + "/register",
+        data: $scope.form, // pass in data as strings
+        headers: { "Access-Control-Allow-Origin": "*" }, // set the headers so angular passing info as form data (not request payload)
+      }).then(
+        function mySuccess(response) {
+          console.log(response);
+          $scope.error = null;
+          var data = response.data;
+          AuthService.storeUser(data);
+          $state.transitionTo("dashboard");
+        },
+        function (error) {
+          console.log(error);
+          var data = error.data;
+          $scope.error = data.errors[0].msg;
+        }
+      );
+    };
   }
 );
 
 app.controller(
-    "getDataAdmin",
-    function ($scope, $http, $state, config, AuthService, $localStorage) {
-      $scope.error;
-  
-      $scope.user = $localStorage.user;
-  
-      console.log($scope.user);
-    }
-  );
+  "getDataAdmin",
+  function ($scope, $http, $state, config, AuthService, $localStorage) {
+    $scope.error;
+
+    $scope.user = $localStorage.user;
+    $scope.reloadRoute = function () {
+    //   location.href("#!/dashboard")
+    };
+    console.log($scope.user);
+  }
+);

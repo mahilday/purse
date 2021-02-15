@@ -91,7 +91,7 @@
       },
     },
   };
-  $(document).ready(function(){
+  $(function(){
   console.log(document.getElementById("timeline-chart"));
   var chart = new ApexCharts(
     document.querySelector("#timeline-chart"),

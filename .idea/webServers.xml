@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ea449cf8-64f2-4a48-a5ab-efa17690234c" name="EZO CPANEL" url="http://ezopurse.com/cpanel">
+        <fileTransfer rootFolder="/public_html" host="ezopurse.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
