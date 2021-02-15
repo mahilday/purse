@@ -10796,6 +10796,14 @@ a.active {
   text-align: center;
   padding: 10px 0;
 }
+.acc_add{
+  background: #54b000;
+  color: #f4f4f4;
+}
+.acc_add:hover{
+  color: #fff;
+  background: #54b000aa;
+}
 .profile_log .user .thumb i {
   font-size: 20px;
 }
