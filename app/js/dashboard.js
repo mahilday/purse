@@ -98,7 +98,19 @@
     options
   );
   chart.render();
-  
+
+  var resetCssClass = function (activeEl) {
+    var els = document.querySelectorAll(".sett-nav");
+    Array.prototype.forEach.call(els, function (el) {
+      el.classList.remove("active");
+    });
+
+    activeEl.target.classList.add("active");
+  };
+
+  document.querySelector("#edit-prof").addEventListener("click", function (e) {
+    resetCssClasses(e);
+  })
 
   var resetCssClasses = function (activeEl) {
     var els = document.querySelectorAll(".dur-op");

@@ -52,12 +52,22 @@ app.controller(
 
 app.controller(
   "getDataAdmin",
-  function ($scope, $http, $state, config, AuthService, $localStorage) {
+  function (
+    $scope,
+    $http,
+    $state,
+    $location,
+    config,
+    AuthService,
+    $localStorage
+  ) {
     $scope.error;
-
+    $scope.isActive = function (viewLocation) {
+      return viewLocation === $location.path();
+    };
     $scope.user = $localStorage.user;
     $scope.reloadRoute = function () {
-    //   location.href("#!/dashboard")
+      //   location.href("#!/dashboard")
     };
     console.log($scope.user);
   }

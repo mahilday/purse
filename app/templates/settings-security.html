@@ -1,0 +1,117 @@
+
+
+        <div ng-include src="'templates/includes/header.html'"></div>
+        <div ng-include src="'templates/includes/side-nav.html'"></div>
+        
+        <div class="page-title dashboard">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="page-title-content">
+                            <p>Welcome Back,
+                                <span> Maria Pascle</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <ul class="text-right breadcrumbs list-unstyle">
+                            <li><a href="settings.html">Settings </a></li>
+                            <li class="active"><a href="#">Security</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-3 col-md-4">
+                        <div ng-include src="'templates/includes/settings-nav.html'"></div>
+                    </div>
+                    <div class="col-xl-9 col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Security</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-xl-4">
+                                        <div class="id_card">
+                                            <img src="images/id.png" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <div class="id_info">
+                                            <h3>Maria Pascle </h3>
+                                            <p class="mb-1 mt-3">ID: 0024 5687 2254 3698 </p>
+                                            <p class="mb-1">Status: <span class="font-weight-bold">Verified</span></p>
+                                            <a href="verify-step-2.html" class="btn btn-success mt-3">New ID</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="phone_verify">
+                                            <h4 class="card-title mb-3">Email Address</h4>
+                                            <form action="https://quixlab.com/demo/tradix/otp-2.html">
+                                                <div class="form-row align-items-center">
+                                                    <div class="form-group col-xl-6">
+                                                        <input type="text" class="form-control"
+                                                            placeholder="hello@example.com ">
+                                                        <button class="btn btn-success mt-4">Add</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <div class="phone_verified">
+                                            <h5> <span><i class="fa fa-envelope"></i></span> hello@example.com</h5>
+                                            <div class="verify">
+                                                <div class="verified">
+                                                    <span><i class="la la-check"></i></span>
+                                                    <a href="#">Verified</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="phone_verify">
+                                            <h4 class="card-title mb-3">Add Phone Number</h4>
+                                            <form action="https://quixlab.com/demo/tradix/otp-2.html">
+                                                <div class="form-row align-items-center">
+                                                    <div class="form-group col-xl-6">
+                                                        <input type="text" class="form-control"
+                                                            placeholder="+1 2335 2458 ">
+                                                        <button class="btn btn-success mt-4">Add</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <div class="phone_verified">
+                                            <h5> <span><i class="fa fa-phone"></i></span> +1 23584 2659</h5>
+                                            <div class="verify">
+                                                <div class="verified">
+                                                    <span><i class="la la-check"></i></span>
+                                                    <a href="#">Verified</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div ng-include src="'templates/includes/footer.html'"></div>

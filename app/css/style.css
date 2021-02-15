@@ -197,12 +197,16 @@ sup {
 }
 
 a {
-  color: #1652f0;
+  color: #9b9c9b;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #0b38ae;
+  color: #54b000;
+  text-decoration: underline;
+}
+a:focus {
+  color: #54b000;
   text-decoration: underline;
 }
 
@@ -13041,11 +13045,11 @@ button,
 }
 .info-list ul li:hover,
 .info-list ul li:focus {
-  color: #1652f0;
+  color: #54b000;
 }
 .info-list ul li i {
   margin-right: 15px;
-  color: #1652f0;
+  color: #54b000;
   font-weight: bold;
   font-size: 24px;
 }

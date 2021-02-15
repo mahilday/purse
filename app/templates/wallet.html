@@ -4,13 +4,13 @@
 
 <div ng-include src="'templates/includes/side-nav.html'"></div>
 
-<div class="page-title dashboard">
+<div class="page-title dashboard" ng-controller="WalletController">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-12">
                 <div class="page-title-content">
                     <p>Welcome Back,
-                        <span> Maria Pascle</span>
+                        <span> {{currentUser.user.firstName + " " + currentUser.user.lastName}}</span>
                     </p>
                 </div>
             </div>
