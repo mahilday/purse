@@ -129,6 +129,20 @@ app.config(function (
       controller: "ProfileController",
       templateUrl: "templates/edit-profile.html",
     },
+    {
+      name: "faq",
+      url: "/faq",
+      templateUrl: "templates/faq.html",
+      controller: "FaqController",
+      authenticate: true
+    },
+    {
+      name: "about",
+      url: "/about",
+      templateUrl: "templates/about.html",
+      controller: "AuthController",
+      authenticate: true,
+    },
   ];
   states.forEach((state) => $stateProvider.state(state));
   $urlRouterProvider.otherwise("/");

@@ -10969,7 +10969,7 @@ a.active {
   border-top: 1px solid #203055;
   background: #1b2a4e;
   padding: 27px 0px;
-  width: 98%;
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -10979,7 +10979,7 @@ a.active {
   border-color: #f1f4f8;
   position: fixed;
   bottom: 0px;
-  width: 96%;
+  left: 0px;
   display: flex;
   justify-content: space-around;
   /* margin: 0 auto; */
