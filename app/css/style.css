@@ -222,7 +222,19 @@ a:not([href]):not([tabindex]):focus {
 a:not([href]):not([tabindex]):focus {
   outline: 0;
 }
-
+.add-color {
+  color: #54b000;
+}
+.add-bg {
+  background: #54b000;
+}
+.save-acc{
+  border: none;
+  color: #f4f4f4;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
 pre,
 code,
 kbd,
@@ -10796,11 +10808,11 @@ a.active {
   text-align: center;
   padding: 10px 0;
 }
-.acc_add{
+.acc_add {
   background: #54b000;
   color: #f4f4f4;
 }
-.acc_add:hover{
+.acc_add:hover {
   color: #fff;
   background: #54b000aa;
 }
@@ -13216,6 +13228,7 @@ button,
 
 .terms_condition {
   position: relative;
+  z-index: -3;
 }
 
 .terms_condition-content {

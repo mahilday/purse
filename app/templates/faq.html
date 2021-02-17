@@ -4,94 +4,148 @@
 <div class="terms_condition" ng-controller="FaqController">
   <div class="container">
     <div class="row">
-        <div class="col-xl-12 col-12 col-xxl-12">
-            <div class="card">
+      <div class="col-xl-12 col-12 col-xxl-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">FAQ</h4>
+          </div>
+          <div class="card-body">
+            <div id="accordion-faq" class="accordion">
+              <div class="card" ng-repeat="faq in faqArray">
                 <div class="card-header">
-                    <h4 class="card-title">FAQ</h4>
+                  <h5
+                    class="mb-0 collapsed cursor-pointer"
+                    data-toggle="collapse"
+                    data-target="#collapseOne{{$index}}"
+                    aria-expanded="false"
+                    aria-controls="collapseOne{{$index}}"
+                  >
+                    <i
+                      class="fa fa-question-circle add-color mr-2"
+                      aria-hidden="true"
+                    ></i
+                    >{{faq.question}}
+                  </h5>
                 </div>
-                <div class="card-body">
-                    <div id="accordion-faq" class="accordion">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="mb-0 collapsed c-pointer" data-toggle="collapse"
-                                    data-target="#collapseOne1" aria-expanded="false"
-                                    aria-controls="collapseOne1"><i class="fa" aria-hidden="true"></i>What
-                                    Shipping Methods are Available?</h5>
-                            </div>
-                            <div id="collapseOne1" class="collapse show" data-parent="#accordion-faq">
-                                <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high
-                                    life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-                                    cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                    eiusmod.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="mb-0 collapsed c-pointer" data-toggle="collapse"
-                                    data-target="#collapseTwo2" aria-expanded="false"
-                                    aria-controls="collapseTwo2"><i class="fa" aria-hidden="true"></i>How
-                                    Long Will it Take To Get My Package?</h5>
-                            </div>
-                            <div id="collapseTwo2" class="collapse" data-parent="#accordion-faq">
-                                <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high
-                                    life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-                                    cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                    eiusmod.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="mb-0 collapsed c-pointer" data-toggle="collapse"
-                                    data-target="#collapseThree3" aria-expanded="false"
-                                    aria-controls="collapseThree3"><i class="fa" aria-hidden="true"></i>How
-                                    Do I Track My Order?</h5>
-                            </div>
-                            <div id="collapseThree3" class="collapse" data-parent="#accordion-faq">
-                                <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high
-                                    life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-                                    cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                    eiusmod.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="mb-0 collapsed c-pointer" data-toggle="collapse"
-                                    data-target="#collapseThree4" aria-expanded="false"
-                                    aria-controls="collapseThree4"><i class="fa" aria-hidden="true"></i>Do I
-                                    Need A Account To Place Order?</h5>
-                            </div>
-                            <div id="collapseThree4" class="collapse" data-parent="#accordion-faq">
-                                <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high
-                                    life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-                                    cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                    eiusmod.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="mb-0 collapsed c-pointer" data-toggle="collapse"
-                                    data-target="#collapseThree5" aria-expanded="false"
-                                    aria-controls="collapseThree5"><i class="fa" aria-hidden="true"></i>How
-                                    do I Place an Order?</h5>
-                            </div>
-                            <div id="collapseThree5" class="collapse" data-parent="#accordion-faq">
-                                <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high
-                                    life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-                                    cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                    eiusmod.
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                <div
+                  id="collapseOne{{$index}}"
+                  class="collapse"
+                  ng-class="{'show': $index == 0}"
+                  data-parent="#accordion-faq"
+                >
+                  <div class="card-body">{{faq.answer}}</div>
                 </div>
+              </div>
+              <!-- <div class="card">
+                <div class="card-header">
+                  <h5
+                    class="mb-0 collapsed c-pointer"
+                    data-toggle="collapse"
+                    data-target="#collapseTwo2"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo2"
+                  >
+                    <i class="fa" aria-hidden="true"></i>How Long Will it Take
+                    To Get My Package?
+                  </h5>
+                </div>
+                <div
+                  id="collapseTwo2"
+                  class="collapse"
+                  data-parent="#accordion-faq"
+                >
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life
+                    accusamus terry richardson ad squid. 3 wolf moon officia
+                    aute, non cupidatat skateboard dolor brunch. Food truck
+                    quinoa nesciunt laborum eiusmod.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <h5
+                    class="mb-0 collapsed c-pointer"
+                    data-toggle="collapse"
+                    data-target="#collapseThre5"
+                    aria-expanded="false"
+                    aria-controls="collapseThre5"
+                  >
+                    <i class="fa" aria-hidden="true"></i>How Do I Track My
+                    Order?
+                  </h5>
+                </div>
+                <div
+                  id="collapseThre5"
+                  class="collapse"
+                  data-parent="#accordion-faq"
+                >
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life
+                    accusamus terry richardson ad squid. 3 wolf moon officia
+                    aute, non cupidatat skateboard dolor brunch. Food truck
+                    quinoa nesciunt laborum eiusmod.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <h5
+                    class="mb-0 collapsed c-pointer"
+                    data-toggle="collapse"
+                    data-target="#collapseThre5"
+                    aria-expanded="false"
+                    aria-controls="collapseThre5"
+                  >
+                    <i class="fa" aria-hidden="true"></i>Do I Need A Account To
+                    Place Order?
+                  </h5>
+                </div>
+                <div
+                  id="collapseThre5"
+                  class="collapse"
+                  data-parent="#accordion-faq"
+                >
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life
+                    accusamus terry richardson ad squid. 3 wolf moon officia
+                    aute, non cupidatat skateboard dolor brunch. Food truck
+                    quinoa nesciunt laborum eiusmod.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <h5
+                    class="mb-0 collapsed c-pointer"
+                    data-toggle="collapse"
+                    data-target="#collapseThree5"
+                    aria-expanded="false"
+                    aria-controls="collapseThree5"
+                  >
+                    <i class="fa" aria-hidden="true"></i>How do I Place an
+                    Order?
+                  </h5>
+                </div>
+                <div
+                  id="collapseThree5"
+                  class="collapse"
+                  data-parent="#accordion-faq"
+                >
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life
+                    accusamus terry richardson ad squid. 3 wolf moon officia
+                    aute, non cupidatat skateboard dolor brunch. Food truck
+                    quinoa nesciunt laborum eiusmod.
+                  </div>
+                </div>
+              </div> -->
             </div>
+          </div>
         </div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
 
-<div ng-include src="'templates/includes/footer.html'"></div>
+  <div ng-include src="'templates/includes/footer.html'"></div>
+</div>
